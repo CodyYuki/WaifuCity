@@ -10,6 +10,7 @@ public class PlacementManager : MonoBehaviour
     Grid placementGrid;
 
     private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
+    private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class PlacementManager : MonoBehaviour
     internal bool CheckIfPositionInBound(Vector3Int position)
     {
         //Managers should stay at (0,0) becuase this is comparing its distance from the position of 0
-        if (position.x >= 0 && position.x < width && position.z >=0 && position.z < height)
+        if (position.x >= 0 && position.x < width && position.z >= 0 && position.z < height)
         {
             return true;
         }
@@ -64,6 +65,8 @@ public class PlacementManager : MonoBehaviour
     {
         if (temporaryRoadobjects.ContainsKey(position))
             temporaryRoadobjects[position].SwapModel(newModel, rotation);
+        else if (structureDictionary.ContainsKey(position))
+            structureDictionary[position].SwapModel(newModel, rotation);
     }
 
     internal List<Vector3Int> GetNeighboursOfTypeFor(Vector3Int position, CellType type)
@@ -76,4 +79,40 @@ public class PlacementManager : MonoBehaviour
         }
         return neighbours;
     }
+
+    internal List<Vector3Int> GetPathBetween(Vector3Int startPosition, Vector3Int endPosition)
+    {
+        var resultPath = GridSearch.AStarSearch(placementGrid, new Point(startPosition.x, startPosition.z), new Point(endPosition.x, endPosition.z));
+        List<Vector3Int> path = new List<Vector3Int>();
+        foreach (Point point in resultPath)
+        {
+            path.Add(new Vector3Int(point.X, 0, point.Y));
+        }
+        return path;
+    }
+
+
+    internal void RemoveAllThemporaryStructures()
+    {
+        foreach (var structure in temporaryRoadobjects.Values)
+        {
+            var position = Vector3Int.RoundToInt(structure.transform.position);
+            placementGrid[position.x, position.z] = CellType.Empty;
+            Destroy(structure.gameObject);
+        }
+        temporaryRoadobjects.Clear();
+    }
+
+    internal void AddtempoararyStructuresToStructureDictionary()
+    {
+        foreach (var structure in temporaryRoadobjects)
+        {
+            structureDictionary.Add(structure.Key, structure.Value);
+        }
+        temporaryRoadobjects.Clear();
+    }
+
+
 }
+
+
