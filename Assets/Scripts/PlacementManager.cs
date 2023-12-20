@@ -112,7 +112,10 @@ public class PlacementManager : MonoBehaviour
         temporaryRoadobjects.Clear();
     }
 
-
+    internal void PlaceObjectOnTheMap(Vector3Int position, object prefab, CellType structure)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 
