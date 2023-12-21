@@ -108,13 +108,26 @@ public class PlacementManager : MonoBehaviour
         foreach (var structure in temporaryRoadobjects)
         {
             structureDictionary.Add(structure.Key, structure.Value);
+            DestoryNatureAt(structure.Key);
         }
         temporaryRoadobjects.Clear();
     }
 
-    internal void PlaceObjectOnTheMap(Vector3Int position, object prefab, CellType structure)
+    private void DestoryNatureAt(Vector3Int position)
     {
-        throw new NotImplementedException();
+        RaycastHit[] hits = Physics.BoxCastAll(position + new Vector3(0, 0.5f, 0), new Vector3(0.5f, 0.5f, 0.5f), transform.up, Quaternion.identity, 1f, 1 << LayerMask.NameToLayer("Nature"));
+        foreach (var item in hits)
+        {
+            Destroy(item.collider.gameObject);
+        }
+    }
+
+    internal void PlaceObjectOnTheMap(Vector3Int position, GameObject structurePrefab, CellType type)
+    {
+        placementGrid[position.x, position.z] = type;
+        StructureModel structure = CreateANewStructureModel(position, structurePrefab, type);
+        structureDictionary.Add(position, structure);
+        DestoryNatureAt(position);
     }
 }
 
