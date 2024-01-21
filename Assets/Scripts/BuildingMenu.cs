@@ -13,26 +13,34 @@ public class BuildingMenu : MonoBehaviour
     public Button basicBtn;
     public GameObject basicSection;
 
-    public Button ShopBtn;
+    public Button shopBtn;
     public GameObject ShopSection;
 
-    public Button LawBtn;
+    public Button lawBtn;
     public GameObject LawSection;
 
-    public Button SchoolBtn;
+    public Button schoolBtn;
     public GameObject SchoolSection;
 
-    public Button TechBtn;
+    public Button techBtn;
     public GameObject TechSection;
 
-    public Button HealthBtn;
+    public Button healthBtn;
     public GameObject HealthSection;
 
-    public Button FireDptBtn;
+    public Button fireDptBtn;
     public GameObject FireDptSection;
 
     public bool active = false;
     public string section = "basic";
+
+
+
+
+
+
+
+
 
     void Start()
     {
@@ -42,57 +50,78 @@ public class BuildingMenu : MonoBehaviour
         Button basic = basicBtn.GetComponent<Button>();
         basic.onClick.AddListener(SectionBasic);
 
-        Button law = basicBtn.GetComponent<Button>();
+        Button shop = shopBtn.GetComponent<Button>();
+        shop.onClick.AddListener(SectionShop);
+
+        Button law = lawBtn.GetComponent<Button>();
         law.onClick.AddListener(SectionLaw);
 
-        Button school = basicBtn.GetComponent<Button>();
+        Button school = schoolBtn.GetComponent<Button>();
         school.onClick.AddListener(SectionSchool);
 
-        Button tech = basicBtn.GetComponent<Button>();
-        tech.onClick.AddListener(SectionTect);
+        Button tech = techBtn.GetComponent<Button>();
+        tech.onClick.AddListener(SectionTech);
 
-        Button health = basicBtn.GetComponent<Button>();
+        Button health = healthBtn.GetComponent<Button>();
         health.onClick.AddListener(SectionHealth);
 
-        Button fireDpt = basicBtn.GetComponent<Button>();
+        Button fireDpt = fireDptBtn.GetComponent<Button>();
         fireDpt.onClick.AddListener(SectionFireDpt);
 
     }
 
     private void SectionFireDpt()
     {
-        throw new NotImplementedException();
+        section = "firedpt";
+        SectionOnClick(FireDptSection);
     }
 
     private void SectionHealth()
     {
-        throw new NotImplementedException();
+        section = "health";
+        SectionOnClick(HealthSection);
     }
 
-    private void SectionTect()
+    private void SectionTech()
     {
-        throw new NotImplementedException();
+        section = "tech";
+        SectionOnClick(TechSection);
     }
 
     private void SectionSchool()
     {
-        throw new NotImplementedException();
+        section = "school";
+        SectionOnClick(SchoolSection);
     }
 
     private void SectionLaw()
     {
         section = "law";
+        SectionOnClick(LawSection);
     }
 
     private void SectionBasic()
     {
         section = "basic";
-        SectionOnClick();
+        SectionOnClick(basicSection);
+    }
+    private void SectionShop()
+    {
+        section = "shop";
+        SectionOnClick(ShopSection);
     }
 
-    private void SectionOnClick()
+    private void SectionOnClick(GameObject Sectionthing)
     {
-        throw new NotImplementedException();
+        basicSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        ShopSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        LawSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        SchoolSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        TechSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        HealthSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        FireDptSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+
+        Sectionthing.transform.position += new Vector3(0, 120, 0);
     }
 
     void TaskOnClick()

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
         uiController.OnRoadPlacement += RoadPlacementHandler;
         uiController.OnHousePlacement += HousePlacementHandler;
-        uiController.OnSpecialPlacement += SpecialPlacementHandler;
+        uiController.OnPolicePlacement += SpecialPlacementHandler;
     }
 
     private void SpecialPlacementHandler()
