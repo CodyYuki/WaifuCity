@@ -6,15 +6,20 @@ using UnityEngine;
 
 public class StructureManager : MonoBehaviour
 {
-    public StructurePrefabWeighted[] housesPrefabs, specialPrefabs;
+    public StructurePrefabWeighted[] housesPrefabs, policePrefabs, hospitalPrefabs, fireDptPrefabs, techPrefabs, schoolPrefabs, shopPrefabs;
     public PlacementManager placementManager;
 
-    private float[] houseWeights, specialWeights;
+    private float[] houseWeights, policeWeights, hospitalWeights, fireDptWeights, techWeights, schoolWeights, shopWeights;
 
     private void Start()
     {
         houseWeights = housesPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
-        specialWeights = specialPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
+        policeWeights = policePrefabs.Select(prefabStats => prefabStats.weight).ToArray();
+        hospitalWeights = hospitalPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
+        shopWeights = shopPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
+        techWeights = techPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
+        fireDptWeights = fireDptPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
+        schoolWeights = schoolPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
     }
 
     public void PlaceHouse(Vector3Int position)
@@ -26,14 +31,60 @@ public class StructureManager : MonoBehaviour
         }
     }
 
-    public void PlaceSpecial(Vector3Int position)
+    public void PlacePolice(Vector3Int position)
     {
         if (CheckPositionBeforePlacement(position))
         {
-            int randomIndex = GetRandomWeightedIndex(specialWeights);
-            placementManager.PlaceObjectOnTheMap(position, specialPrefabs[randomIndex].prefab, CellType.Structure);
+            int randomIndex = GetRandomWeightedIndex(policeWeights);
+            placementManager.PlaceObjectOnTheMap(position, policePrefabs[randomIndex].prefab, CellType.Structure);
         }
     }
+
+    public void PlaceHospital(Vector3Int position)
+    {
+        if (CheckPositionBeforePlacement(position))
+        {
+            int randomIndex = GetRandomWeightedIndex(hospitalWeights);
+            placementManager.PlaceObjectOnTheMap(position, hospitalPrefabs[randomIndex].prefab, CellType.Structure);
+        }
+    }
+
+    public void PlaceShop(Vector3Int position)
+    {
+        if (CheckPositionBeforePlacement(position))
+        {
+            int randomIndex = GetRandomWeightedIndex(shopWeights);
+            placementManager.PlaceObjectOnTheMap(position, shopPrefabs[randomIndex].prefab, CellType.Structure);
+        }
+    }
+
+    public void PlaceSchool(Vector3Int position)
+    {
+        if (CheckPositionBeforePlacement(position))
+        {
+            int randomIndex = GetRandomWeightedIndex(schoolWeights);
+            placementManager.PlaceObjectOnTheMap(position, schoolPrefabs[randomIndex].prefab, CellType.Structure);
+        }
+    }
+
+    public void PlaceTech(Vector3Int position)
+    {
+        if (CheckPositionBeforePlacement(position))
+        {
+            int randomIndex = GetRandomWeightedIndex(techWeights);
+            placementManager.PlaceObjectOnTheMap(position, techPrefabs[randomIndex].prefab, CellType.Structure);
+        }
+    }
+
+    public void FireDptHospital(Vector3Int position)
+    {
+        if (CheckPositionBeforePlacement(position))
+        {
+            int randomIndex = GetRandomWeightedIndex(fireDptWeights);
+            placementManager.PlaceObjectOnTheMap(position, fireDptPrefabs[randomIndex].prefab, CellType.Structure);
+        }
+    }
+
 
     private int GetRandomWeightedIndex(float[] weights)
     {

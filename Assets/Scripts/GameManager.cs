@@ -18,19 +18,53 @@ public class GameManager : MonoBehaviour
     {
         uiController.OnRoadPlacement += RoadPlacementHandler;
         uiController.OnHousePlacement += HousePlacementHandler;
-        uiController.OnPolicePlacement += SpecialPlacementHandler;
+        uiController.OnPolicePlacement += PolicePlacementHandler;
+        uiController.OnHealthPlacement += HospitalPlacementHandler;
+        uiController.OnShopPlacement += ShopPlacementHandler;
+        uiController.OnSchoolPlacement += SchoolPlacementHandler;
+        uiController.OnTechPlacement += TechPlacementHandler;
+        uiController.OnFireDptPlacement += FireDptPlacementHandler;
     }
 
-    private void SpecialPlacementHandler()
+    private void PolicePlacementHandler()
     {
         ClearInputActions();
-        inputManager.OnMouseClick += structureManager.PlaceSpecial;
+        inputManager.OnMouseClick += structureManager.PlacePolice;
     }
 
     private void HousePlacementHandler()
     {
         ClearInputActions();
         inputManager.OnMouseClick += structureManager.PlaceHouse;
+    }
+    private void HospitalPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.OnMouseClick += structureManager.PlaceHospital;
+    }
+
+    private void ShopPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.OnMouseClick += structureManager.PlaceShop;
+    }
+
+    private void SchoolPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.OnMouseClick += structureManager.PlaceSchool;
+    }
+
+    private void TechPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.OnMouseClick += structureManager.PlaceTech;
+    }
+
+    private void FireDptPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.OnMouseClick += structureManager.FireDptHospital;
     }
 
     private void RoadPlacementHandler()

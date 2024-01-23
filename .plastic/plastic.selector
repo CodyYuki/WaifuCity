@@ -1,0 +1,4 @@
+repository "WaifuCity@codydiamond65131@cloud"
+  path "/"
+    br "/main"
+    co "/main"

@@ -37,6 +37,41 @@ public class UIController : MonoBehaviour
             OnPolicePlacement?.Invoke();
 
         });
+        placeHealthButton.onClick.AddListener(() =>
+        {
+            ResetButtonColor();
+            ModifyOutline(placeHealthButton);
+            OnHealthPlacement?.Invoke();
+
+        });
+        placeShopButton.onClick.AddListener(() =>
+        {
+            ResetButtonColor();
+            ModifyOutline(placeShopButton);
+            OnShopPlacement?.Invoke();
+
+        });
+        placeSchoolButton.onClick.AddListener(() =>
+        {
+            ResetButtonColor();
+            ModifyOutline(placeSchoolButton);
+            OnSchoolPlacement?.Invoke();
+
+        });
+        placeTechButton.onClick.AddListener(() =>
+        {
+            ResetButtonColor();
+            ModifyOutline(placeTechButton);
+            OnTechPlacement?.Invoke();
+
+        });
+        placeFireDptButton.onClick.AddListener(() =>
+        {
+            ResetButtonColor();
+            ModifyOutline(placeFireDptButton);
+            OnFireDptPlacement?.Invoke();
+
+        });
 
     }
 
