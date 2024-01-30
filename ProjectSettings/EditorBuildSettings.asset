@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 189021d34f7251d40ac7e6f983d8025d
+  - enabled: 1
+    path: Assets/Scenes/WaifuCity.unity
+    guid: 7c5cb428bc07b6c439d986671cd34f02
   m_configObjects: {}

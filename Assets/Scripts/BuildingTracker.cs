@@ -27,7 +27,7 @@ public class BuildingTracker : MonoBehaviour
     public TMP_Text fireDptTrk;
     public TMP_Text constructionTrk;
 
-
+    public int housenumber = 0;
     void Update()
     {
         houses = GameObject.FindGameObjectsWithTag("House");

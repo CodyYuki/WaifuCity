@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour
     public Color outlineColor;
     List<Button> buttonList;
 
+    public UiStatsBar uiStatsBar;
+
     private void Start()
     {
         buttonList = new List<Button> { placeRoadButton, placeHouseButton, placePoliceButton, placeShopButton, placeSchoolButton, placeTechButton, placeHealthButton, placeFireDptButton };
@@ -25,10 +27,12 @@ public class UIController : MonoBehaviour
         });
         placeHouseButton.onClick.AddListener(() =>
         {
-            ResetButtonColor();
-            ModifyOutline(placeHouseButton);
-            OnHousePlacement?.Invoke();
-
+            if (uiStatsBar.cash >= 3000)
+            {
+                ResetButtonColor();
+                ModifyOutline(placeHouseButton);
+                OnHousePlacement?.Invoke();
+            }
         });
         placePoliceButton.onClick.AddListener(() =>
         {
@@ -46,9 +50,12 @@ public class UIController : MonoBehaviour
         });
         placeShopButton.onClick.AddListener(() =>
         {
-            ResetButtonColor();
-            ModifyOutline(placeShopButton);
-            OnShopPlacement?.Invoke();
+            if (uiStatsBar.cash >= 2400)
+            {
+                ResetButtonColor();
+                ModifyOutline(placeShopButton);
+                OnShopPlacement?.Invoke();
+            }
 
         });
         placeSchoolButton.onClick.AddListener(() =>

@@ -8,8 +8,16 @@ public class StructureManager : MonoBehaviour
 {
     public StructurePrefabWeighted[] housesPrefabs, policePrefabs, hospitalPrefabs, fireDptPrefabs, techPrefabs, schoolPrefabs, shopPrefabs;
     public PlacementManager placementManager;
-
+    public UiStatsBar uiStatsBar;
     private float[] houseWeights, policeWeights, hospitalWeights, fireDptWeights, techWeights, schoolWeights, shopWeights;
+    public int housePrice = 0;
+    public int ShopPrice = 0;
+    public int SchoolPrice = 0;
+    public int LawPrice = 0;
+    public int HeathPrice = 0;
+    public int FireDpt = 0;
+    public int TechPrice = 0;
+
 
     private void Start()
     {
@@ -24,64 +32,92 @@ public class StructureManager : MonoBehaviour
 
     public void PlaceHouse(Vector3Int position)
     {
-        if(CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= housePrice)
         {
-            int randomIndex = GetRandomWeightedIndex(houseWeights);
-            placementManager.PlaceObjectOnTheMap(position, housesPrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - housePrice;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(houseWeights);
+                placementManager.PlaceObjectOnTheMap(position, housesPrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
     public void PlacePolice(Vector3Int position)
     {
-        if (CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= LawPrice)
         {
-            int randomIndex = GetRandomWeightedIndex(policeWeights);
-            placementManager.PlaceObjectOnTheMap(position, policePrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - LawPrice;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(policeWeights);
+                placementManager.PlaceObjectOnTheMap(position, policePrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
     public void PlaceHospital(Vector3Int position)
     {
-        if (CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= HeathPrice)
         {
-            int randomIndex = GetRandomWeightedIndex(hospitalWeights);
-            placementManager.PlaceObjectOnTheMap(position, hospitalPrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - HeathPrice;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(hospitalWeights);
+                placementManager.PlaceObjectOnTheMap(position, hospitalPrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
     public void PlaceShop(Vector3Int position)
     {
-        if (CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= ShopPrice)
         {
-            int randomIndex = GetRandomWeightedIndex(shopWeights);
-            placementManager.PlaceObjectOnTheMap(position, shopPrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - ShopPrice;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(shopWeights);
+                placementManager.PlaceObjectOnTheMap(position, shopPrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
     public void PlaceSchool(Vector3Int position)
     {
-        if (CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= SchoolPrice)
         {
-            int randomIndex = GetRandomWeightedIndex(schoolWeights);
-            placementManager.PlaceObjectOnTheMap(position, schoolPrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - SchoolPrice;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(schoolWeights);
+                placementManager.PlaceObjectOnTheMap(position, schoolPrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
     public void PlaceTech(Vector3Int position)
     {
-        if (CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= TechPrice)
         {
-            int randomIndex = GetRandomWeightedIndex(techWeights);
-            placementManager.PlaceObjectOnTheMap(position, techPrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - TechPrice;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(techWeights);
+                placementManager.PlaceObjectOnTheMap(position, techPrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
     public void FireDptHospital(Vector3Int position)
     {
-        if (CheckPositionBeforePlacement(position))
+        if (uiStatsBar.cash >= FireDpt)
         {
-            int randomIndex = GetRandomWeightedIndex(fireDptWeights);
-            placementManager.PlaceObjectOnTheMap(position, fireDptPrefabs[randomIndex].prefab, CellType.Structure);
+            uiStatsBar.cash = uiStatsBar.cash - FireDpt;
+            if (CheckPositionBeforePlacement(position))
+            {
+                int randomIndex = GetRandomWeightedIndex(fireDptWeights);
+                placementManager.PlaceObjectOnTheMap(position, fireDptPrefabs[randomIndex].prefab, CellType.Structure);
+            }
         }
     }
 
