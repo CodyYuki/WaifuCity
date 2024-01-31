@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2491795dfbe642c4fb4de66d4f4ad650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: WaifuCity
+  LevelName: Intro
 --- !u!1 &1220595088
 GameObject:
   m_ObjectHideFlags: 0

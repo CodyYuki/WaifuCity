@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 57964087}
   - component: {fileID: 57964086}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: NameBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 57964084}
   m_LocalRotation: {x: -0, y: -0, z: 0.11156961, w: 0.99375665}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1426890042}
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.812}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -292, y: -17}
+  m_AnchoredPosition: {x: -292.00003, y: -17.000023}
   m_SizeDelta: {x: -626.1134, y: -403.4501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57964086
@@ -315,8 +315,10 @@ GameObject:
   - component: {fileID: 426264559}
   - component: {fileID: 426264561}
   - component: {fileID: 426264560}
+  - component: {fileID: 426264562}
+  - component: {fileID: 426264563}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Diologue Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5069885, y: -122.009}
+  m_AnchoredPosition: {x: -2.506958, y: -122.009}
   m_SizeDelta: {x: -98.6099, y: -284.1304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426264560
@@ -381,6 +383,129 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426264558}
   m_CullTransparentMesh: 1
+--- !u!114 &426264562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426264558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8cdd6052a3e92488da94d25debf4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1528092536}
+  lines:
+  - Today I was finally accepted to be in a new city development program.  I didn't
+    know what to expect, but a meeting is set to happen with the other departments
+    that I will be collabrating with.
+  - I take a look inside the office, and find someone already sitting there.
+  - Are you the new leader? You are early today, the others will arrive shortly,
+    for now please take a seat and the meeting will begin shortly.
+  - I hesitate for a moment, she was really beautiful and I had no idea that someone
+    like her would be part of the development team, I nod and take a seat across
+    from her.
+  - At that moment, another girl bursted into the room, wearing cute glasses and
+    a lab coat thats waaay too big for her.
+  - YA- HELLO!! Hope i'm not late!
+  - No, your early actually, though our new lead is already here.
+  - Ooohhhhhh?! How's it feeling Mr. New Guy?
+  - I was taken aback by how energetic she is, But I manage to at least give a proper
+    introduction
+  - I-It's nice to meet you... So far I guess it's been nice, but I haven't done
+    anything yet. Oh and my name is-
+  - But as soon as said that 2 other girls appeared.
+  - Heeeey! How's the party going here? Hope I didn't miss anything! (FireDpt)
+  - K-Keep it down! This isn't a party, I said it was a meeting! Y-You're gonna give
+    a bad impression! (hospital)
+  - A Party?! Why would you think something like this would be a party?
+  - 'To celebrate you of course! You must be the new lead everyone''s been excited
+    for! '
+  - A-Ah I hope we can work well together! I know it must feel scary but I believe
+    in you!
+  - With all these girls around is already a handfull enough, but even still, 3 more
+    girls entered the room
+  - '[Name] present and accounting ma''am! I have in custody [Name of consumerism
+    girl] for her tardiness and unwillingness to arrive!'
+  - Just becuase you carried me on your back doesn't mean you have me in custody,
+    also I was passed out what do you want from me...
+  - Maybe to work on that sleep schedule of yours haha, you work too hard for your
+    own good!
+  - Well it's not like I can sleep and the customers are still there waiting unlike
+    your buildings!
+  - Wha- Why you!
+  - AHEM, We are still early for the meeting but since we are all here might as well
+    start now,
+  - After everyone take their seats the one who seems to keep an order of things
+    starts with an introduction.
+  - Alright everyone, we are here to discuss our task, to create a well fuctioning
+    and thriving city! And with us is our Lead, [Player name]
+  - As the room fills with applause I awkwardly stand up and give an introduction
+    to everyone, taking a good look around the room...all the departments I'm working
+    with are...
+  - Incredibly cute!!
+  - How did I end up in such a situation? All these girls are too much for someone
+    single like me! If only I could ask at least one of them out...
+  - Heeeey [Player name!] Are you going to be nicer than the other leads and give
+    me some extra tech developmeeeeent?
+  - That's no fair [Tech name]! You can't just beg for them to give you a raise!
+    that should be spent on important things like law enforcment!
+  - whaaa? Do you not know that if they give more money to my department, they make
+    even more money? Plus giving me more time to sleep...
+  - B-B-But what about sick people! W-we need more hospitals if people get very sick!
+    It's scary and sad to tell people they have to wait their turn...!
+  - Yeah sure but then ignore me and your hospital is gonna burn down~ Besides whats
+    cooler than seeing us at work huh?
+  - Oh boy there they go again...
+  - It seems things got out of control real quick... Everyone is arguing about something
+    but I don't know how to interject
+  - AHEM!, quiet down everyone, we shouldn't be like this with the new lead! If this
+    is your attempt on trying to get your funds up it's a really poor way of doing
+    it!
+  - Ah! she seems to know what shes doing, makes me more comfortable but also curious
+    why they didn't say much to me about funding?
+  - After they all quiet down and have our meeting on the plan for this city, all
+    the girls leave one by one, wishing me luck, but when [Education waifu] was about
+    to leave I asked her.
+  - Why didn't you ask for more funding like the other girls? I heard your department
+    always gets underfunded the most..
+  - Believe me I tried but I just accepted that it'll be this way for me, of course
+    just becuase I'm underfunded doesn't mean I won't work twice as hard to teach
+    students.
+  - (She's already giving up on that hope?! Without thinking I wanted to make her
+    feel happier.)
+  - Don't worry! I'll make sure you get proper funding! That should make things better
+    for you right?
+  - Haha.. I wish that was the case but...
+  - If you do that, the other girls won't take that too kindly to pick favorites
+    like this...
+  - What do you mean?
+  - Well like our meeting discussed, you have to have good relationships with the
+    board of departments, which is us, and failure to do so will... Terminate your
+    position...
+  - Oh... Right, so one person isn't just kissing up to the leader for more funding.
+  - Exactly, in fact the other girls might try to win you over as well, It's important
+    for you to get to know them better as well, but be careful in getting swayed.
+  - And with that, tomorrow starts the city development...
+  textSpeed: 0.02
+  scenenumber: 1
+  index: 0
+--- !u!114 &426264563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426264558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4099d54a734aaec4f856b58359f7b2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diologueScript: {fileID: 426264562}
+  Image: {fileID: 1105138802}
+  Name: {fileID: 1426890043}
 --- !u!1 &782462124
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105138803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -542,7 +667,7 @@ GameObject:
   - component: {fileID: 1426890044}
   - component: {fileID: 1426890043}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,7 +713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Erika
+  m_text: '[Name]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -677,7 +802,7 @@ GameObject:
   - component: {fileID: 1528092537}
   - component: {fileID: 1528092536}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Diologue Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
