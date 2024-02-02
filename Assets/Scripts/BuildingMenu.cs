@@ -34,7 +34,7 @@ public class BuildingMenu : MonoBehaviour
     public bool active = false;
     public string section = "basic";
 
-
+    public int distance;
 
 
 
@@ -113,31 +113,31 @@ public class BuildingMenu : MonoBehaviour
 
     private void SectionOnClick(GameObject Sectionthing)
     {
-        basicSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
-        ShopSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
-        LawSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
-        SchoolSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
-        TechSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
-        HealthSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
-        FireDptSection.transform.position = new Vector3(Sectionthing.transform.position.x, 50, Sectionthing.transform.position.z);
+        basicSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
+        ShopSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
+        LawSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
+        SchoolSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
+        TechSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
+        HealthSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
+        FireDptSection.transform.position = new Vector3(Sectionthing.transform.position.x, (distance - 80), Sectionthing.transform.position.z);
 
-        Sectionthing.transform.position += new Vector3(0, 120, 0);
+        Sectionthing.transform.position += new Vector3(0, distance, 0);
     }
 
     void TaskOnClick()
     {
         if (active == false)
         {
-            buildingMenuPannel.transform.position += new Vector3(0, 120, 0);
-            menuBtn.transform.position += new Vector3(0, 120, 0);
+            buildingMenuPannel.transform.position += new Vector3(0, distance, 0);
+            menuBtn.transform.position += new Vector3(0, distance, 0);
             active = true;
             return;
         }
 
         if (active == true)
         {
-            buildingMenuPannel.transform.position += new Vector3(0, -120, 0);
-            menuBtn.transform.position += new Vector3(0, -120, 0);
+            buildingMenuPannel.transform.position += new Vector3(0, (distance * -1), 0);
+            menuBtn.transform.position += new Vector3(0, (distance * -1), 0);
             active = false;
             return;
         }

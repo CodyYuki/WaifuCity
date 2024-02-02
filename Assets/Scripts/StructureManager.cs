@@ -34,11 +34,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= housePrice)
         {
-            uiStatsBar.cash = uiStatsBar.cash - housePrice;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(houseWeights);
                 placementManager.PlaceObjectOnTheMap(position, housesPrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - housePrice;
             }
         }
     }
@@ -47,11 +48,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= LawPrice)
         {
-            uiStatsBar.cash = uiStatsBar.cash - LawPrice;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(policeWeights);
                 placementManager.PlaceObjectOnTheMap(position, policePrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - LawPrice;
             }
         }
     }
@@ -60,11 +62,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= HeathPrice)
         {
-            uiStatsBar.cash = uiStatsBar.cash - HeathPrice;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(hospitalWeights);
                 placementManager.PlaceObjectOnTheMap(position, hospitalPrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - HeathPrice;
             }
         }
     }
@@ -73,11 +76,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= ShopPrice)
         {
-            uiStatsBar.cash = uiStatsBar.cash - ShopPrice;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(shopWeights);
                 placementManager.PlaceObjectOnTheMap(position, shopPrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - ShopPrice;
             }
         }
     }
@@ -86,11 +90,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= SchoolPrice)
         {
-            uiStatsBar.cash = uiStatsBar.cash - SchoolPrice;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(schoolWeights);
                 placementManager.PlaceObjectOnTheMap(position, schoolPrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - SchoolPrice;
             }
         }
     }
@@ -99,11 +104,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= TechPrice)
         {
-            uiStatsBar.cash = uiStatsBar.cash - TechPrice;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(techWeights);
                 placementManager.PlaceObjectOnTheMap(position, techPrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - TechPrice;
             }
         }
     }
@@ -112,11 +118,12 @@ public class StructureManager : MonoBehaviour
     {
         if (uiStatsBar.cash >= FireDpt)
         {
-            uiStatsBar.cash = uiStatsBar.cash - FireDpt;
+            
             if (CheckPositionBeforePlacement(position))
             {
                 int randomIndex = GetRandomWeightedIndex(fireDptWeights);
                 placementManager.PlaceObjectOnTheMap(position, fireDptPrefabs[randomIndex].prefab, CellType.Structure);
+                uiStatsBar.cash = uiStatsBar.cash - FireDpt;
             }
         }
     }

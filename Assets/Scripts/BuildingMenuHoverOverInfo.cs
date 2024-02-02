@@ -7,7 +7,7 @@ public class BuildingMenuHoverOverInfo : MonoBehaviour, IPointerEnterHandler, IP
 {
 
     public GameObject BuildingInfo;
-    public float DistanceY = 70;
+    public static float DistanceY = 180;
 
     public void OnPointerEnter(PointerEventData eventData)
     {

@@ -489,7 +489,7 @@ MonoBehaviour:
     for you to get to know them better as well, but be careful in getting swayed.
   - And with that, tomorrow starts the city development...
   textSpeed: 0.02
-  scenenumber: 1
+  scenenumber: 2
   index: 0
 --- !u!114 &426264563
 MonoBehaviour:
