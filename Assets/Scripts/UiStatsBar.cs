@@ -129,7 +129,7 @@ public class UiStatsBar : MonoBehaviour
     }
 
 
-    private void TimeSpeedReset()
+    public void TimeSpeedReset()
     {
         currentTimeSpeed = 0.01f;
     }
