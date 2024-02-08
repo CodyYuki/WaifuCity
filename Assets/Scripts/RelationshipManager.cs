@@ -43,6 +43,7 @@ public class RelationshipManager : MonoBehaviour
     }
 
 
+
     private void RelationshipCheck()
     {
         //if (shopRelationshipUnits == 1)

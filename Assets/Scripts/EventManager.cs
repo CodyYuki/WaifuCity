@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class EventManager : MonoBehaviour
 {
     public RelationshipManager relationshipManager;
-    
-    
+
+    public GameObject missionImage;
     public TMP_Text eventTitle;
     public TMP_Text eventDescription;
 
-    public string currentinvolvement;
-    
+    public TMP_Text inFavorText;
+    public TMP_Text anotherWayText;
+    public TMP_Text opposedToText;
 
 
     //Note for Monday's CodyYuki to deal with:
@@ -28,12 +30,15 @@ public class EventManager : MonoBehaviour
     //if the event is just a small boost in something, then have the script ready to change the values of 
     //the relationship heart thing
 
-    public void EventCall(string whoinvoled, GameObject waifuimage, string title, string description)
+    public void EventCall(string whoinvoled, GameObject waifuimage, string title, string description, string favorof, string anotherway, string opposedto)
     {
-        currentinvolvement = whoinvoled;
-        Instantiate(waifuimage, transform.position, transform.rotation);
+        Vector3 position = new Vector3(waifuimage.transform.position.x + 600, waifuimage.transform.position.y + 500, waifuimage.transform.position.z);
+        missionImage = Instantiate(waifuimage, position, transform.rotation, transform.parent);
         eventTitle.text = string.Format(title);
         eventDescription.text = string.Format(description);
+        inFavorText.text = string.Format(favorof);
+        anotherWayText.text = string.Format(anotherway);
+        opposedToText.text = string.Format(opposedto);
     }
 
 }
